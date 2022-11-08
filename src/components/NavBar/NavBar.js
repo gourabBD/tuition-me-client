@@ -9,6 +9,8 @@ import { BiUser } from 'react-icons/bi';
 import { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import img from '../../android-chrome-512x512.png'
+
 
 const NavBar = () => {
   const { user,logOut } = useContext(AuthContext);
@@ -21,8 +23,9 @@ const NavBar = () => {
     return (
         <Navbar className='p-4' collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
+      <Image style={{height:"50px"}} src={img}></Image>
       
-        <Navbar.Brand ><Link className='fw-bold text-decoration-none text-info' to={'/'}>Tuition Me</Link></Navbar.Brand>
+        <Navbar.Brand ><Link className='fw-bold text-decoration-none text-info' to={'/'}> Tuition Me</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto ms-5">
