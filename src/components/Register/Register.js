@@ -4,12 +4,13 @@ import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
 
 import { toast } from 'react-hot-toast';
-import { AuthContext } from "../../context/AuthProvider/Authprovider";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+
 
 const Register = () => {
   const [error, setError] = useState("");
   const [accepted, setAccepted] = useState(false);
-  const { createUser, updateUserProfile,verifyEmail } = useContext(AuthContext);
+  const { createUser, updateUserProfile, } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,8 +25,7 @@ const Register = () => {
         setError("");
         form.reset();
         handleUpdateUserProfile(name, photoURL);
-        handlEmailVerification()
-        toast.success('Please verify your email address')
+      
         navigate("/");
       })
       .catch((error) => {
@@ -44,16 +44,15 @@ const Register = () => {
       .catch((error) => console.error(error));
   };
 
-  const handlEmailVerification=()=>{
-    verifyEmail()
-    .then(()=>{})
-    .catch(error=>console.error(error))
-  }
+  
   const handleAccepted = (event) => {
     setAccepted(event.target.checked);
   };
   return (
-    <Form className="m-4" onSubmit={handleSubmit}>
+    <div className="d-flex justify-content-center ">
+    
+    <Form className="m-4 w-50" onSubmit={handleSubmit}>
+    <h1 className="text-primary">Register</h1>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Full Name</Form.Label>
         <Form.Control
@@ -114,6 +113,7 @@ const Register = () => {
         <Form.Text className="text-danger">{error}</Form.Text>
       </div>
     </Form>
+    </div>
   );
 };
 

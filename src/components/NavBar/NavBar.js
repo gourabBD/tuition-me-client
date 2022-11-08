@@ -19,24 +19,31 @@ const NavBar = () => {
     .catch((error) => console.error(error));
   }
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar className='p-4' collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-      <Image style={{height:'50px'}} className="me-2 mb-2" src='https://cdn.dribbble.com/userupload/2448240/file/original-9d958c1a2500b83f7b3f623bb14dfa0f.png?resize=400x0'></Image>
-        <Navbar.Brand ><Link className='fw-bold text-decoration-none text-info' to={'/'}>Programmers Arena</Link></Navbar.Brand>
+      
+        <Navbar.Brand ><Link className='fw-bold text-decoration-none text-info' to={'/'}>Tuition Me</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Link className='me-3 text-decoration-none' to={'/courses'}>Courses</Link>
-            <Link className='me-3 text-decoration-none' to={'/Blogs'}>Blogs</Link>
-            <Link className='me-3 text-decoration-none' to={'/faqs'}>FAQ</Link>
+          <Nav className="me-auto ms-5">
+            <Link className='me-3 fw-bolder text-decoration-none' to={'/services'}>Services</Link>
+            <Link className='me-3 fw-bolder text-decoration-none' to={'/Blogs'}>Blogs</Link>
+            
            
           </Nav>
           <Nav>
           <div href="">
+
+          
                 {user?.uid ? (
                   <>
+                 
+                 <Link className='me-5 fw-bolder text-decoration-none' to={'/myreview'}>My Reviews</Link>
+                   <Link  className='me-5 fw-bolder text-decoration-none' to={'/addservice'}>Add Service</Link>
+                 
                   <Link title={user?.displayName} className='me-2' >
                 {user?.photoURL ? (
+                    
                   <Image
                     src={user?.photoURL}
                     style={{ height: "30px" }}
@@ -48,6 +55,7 @@ const NavBar = () => {
                   <BiUser></BiUser>
                 )}
               </Link>
+                   
                     <span className='text-info'>{user?.displayName}</span>
                     <Button
                       variant="light"
@@ -75,13 +83,7 @@ const NavBar = () => {
                   </>
                 )}
               </div>
-              <div >
-                
-                 {
-                 theme? <Button className='m-2' onClick={()=>setTheme(false)} >Dark </Button >:<Button onClick={()=>setTheme(true)} className='m-2'>Light </Button >
-                  }
-                
-              </div>
+              
             
           </Nav>
         </Navbar.Collapse>
