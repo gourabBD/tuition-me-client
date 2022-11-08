@@ -45,7 +45,8 @@ const MyReviewCard = ({review}) => {
         <Card.Text>
           <span className='fw-bold'>Review:</span> {review?.userReview}
         </Card.Text>
-        <Button onClick={()=>handleDeleteReview(review?._id)} variant="primary">Delete Review</Button>
+        <Button className='me-3 mt-2' onClick={()=>handleDeleteReview(review?._id)} variant="primary">Delete Review</Button>
+        <Button className='mt-2' variant="primary">Edit Review</Button>
       </Card.Body>
     </Card>
     </CardGroup>

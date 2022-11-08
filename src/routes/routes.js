@@ -9,6 +9,7 @@ import Main from "../layouts/Main";
 import ServiceDetails from './../components/ServiceDetails/ServiceDetails';
 import Myreviews from './../components/Myreviews/Myreviews';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Blogs from './../components/Blogs/Blogs';
 
 
   export const router = createBrowserRouter([
@@ -63,6 +64,11 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
         {
           path: "/register",
           element: <Register></Register> ,
+         
+        },
+        {
+          path: "/blogs",
+          element: <Blogs></Blogs> ,
          
         },
         

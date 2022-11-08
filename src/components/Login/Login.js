@@ -14,6 +14,8 @@ const Login = () => {
     const { login,setLoading } = useContext(AuthContext);
     const navigate = useNavigate();
     const location=useLocation()
+    console.log(location)
+    const { state } = useLocation()
     
   
     const from=location.state?.from?.pathname ||'/'
@@ -88,7 +90,7 @@ const Login = () => {
 
       <Form.Text className="text-danger"> {error}</Form.Text>
       </div>
-      <Button onClick={handleGoogleSignIn} className='m-2 ' variant="outline-primary"><BsGoogle></BsGoogle> LogIn with Google</Button>
+      <Button onClick={handleGoogleSignIn}  className='m-2 ' variant="outline-primary"><BsGoogle></BsGoogle> LogIn with Google</Button>
       
       
       <p>Do not have an account? <Link to={'/register'}>Register now?</Link></p>
