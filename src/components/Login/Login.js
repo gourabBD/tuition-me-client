@@ -11,7 +11,7 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 const Login = () => {
     const [error,setError]=useState('')
     const {googleSignIn,setUser}=useContext(AuthContext)
-    const { signIN,setLoading } = useContext(AuthContext);
+    const { login,setLoading } = useContext(AuthContext);
     const navigate = useNavigate();
     const location=useLocation()
     
@@ -26,18 +26,16 @@ const Login = () => {
       const email = form.email.value;
       const password = form.password.value;
   
-      signIN(email, password)
+      login(email, password)
         .then((result) => {
           const user = result.user;
           console.log(user)
           form.reset();
           setError('')
-          if(user.emailVerified){
+          
             navigate(from, { replace: true });
-          }
-          else{
-            toast.error('Your email is not verified yet!')
-          }
+          
+         
         })
         .catch((error) => {
           console.error(error)

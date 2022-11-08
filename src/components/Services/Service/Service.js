@@ -12,7 +12,7 @@ const Service = ({service}) => {
     return (
         <div>
              <CardGroup>
-      <Card className='mb-2 p-2'>
+      <Card style={{height:"30rem"}} className='mb-2 p-2'>
       <PhotoProvider>
         <PhotoView src={img}>
         <Card.Img style={{height:'250px'}} variant="top" src={img} />
@@ -22,7 +22,7 @@ const Service = ({service}) => {
         <Card.Body>
           <Card.Title>{subject}</Card.Title>
           <Card.Text>
-            {description.length>150 ? description.slice(0,150) + ' ...' :description}
+            {description.length>100 ? description.slice(0,100) + ' ...' :description}
 
           </Card.Text>
           <Link to={`/services/${service?._id}`}><Button variant="primary">Show details</Button></Link>

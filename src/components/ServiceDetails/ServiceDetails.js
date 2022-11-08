@@ -1,9 +1,14 @@
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState,useContext} from 'react';
 import {Container,Row,Col} from 'react-bootstrap'
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData,Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Button from 'react-bootstrap/Button';
+import ReviewBody from '../ReviewBody/ReviewBody';
+
 const ServiceDetails = () => {
+  const {user}=useContext(AuthContext)
     const detail=useLoaderData()
  const {img,subject,_id,cost,description,days}=detail
     const [reviews,setReviews]=useState()
@@ -12,7 +17,7 @@ const ServiceDetails = () => {
     .then(res=>res.json())
     .then(data=>setReviews(data))
    },[])
-    console.log(reviews)
+    
     return (
         <div>
             <Container>
@@ -35,7 +40,19 @@ const ServiceDetails = () => {
                   </div>
                 </Col>
                 <Col lg={5}>
-                    <h1>Total reviews of subject: {subject}: {reviews?.length}</h1>
+                <div>
+                {
+                  user? <Link to={`/myreviews/${_id}`}><Button className='mt-2'>Add a review</Button> </Link>:<p className='text-danger fw-bold mt-2'>Please login to add a review.</p>
+                }
+                </div>
+                    <div >
+                    <h5>Total reviews: {reviews?.length}</h5>
+                    </div>
+                    <div className='row row-cols-1 d-flex justify-content-center'>
+                      {
+                        reviews?.map(review=><ReviewBody key={review?._id} review={review}></ReviewBody> )
+                      }
+                    </div>
                 </Col>
                
 

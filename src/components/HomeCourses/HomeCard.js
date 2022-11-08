@@ -9,10 +9,10 @@ const HomeCard = ({service}) => {
     const {description,subject}=service
     return (
         <CardGroup>
-             <Card className=' mb-2' style={{ width: 'auto' }}>
+             <Card className=' mb-2' >
              <PhotoProvider>
         <PhotoView src={service?.img}>
-        <Card.Img style={{height:'250px'}} variant="top" src={service?.img} />
+        <Card.Img style={{height:'200px'}} variant="top" src={service?.img} />
         </PhotoView>
       </PhotoProvider>
       <Card.Body>
