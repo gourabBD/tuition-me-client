@@ -8,6 +8,7 @@ import Terms from "../components/Terms/Terms";
 import Main from "../layouts/Main";
 import ServiceDetails from './../components/ServiceDetails/ServiceDetails';
 import Myreviews from './../components/Myreviews/Myreviews';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
   export const router = createBrowserRouter([
@@ -23,7 +24,7 @@ import Myreviews from './../components/Myreviews/Myreviews';
         },
         {
           path: "/myreviews/:id",
-          element: <ReviewForm></ReviewForm>,
+          element: <PrivateRoute><ReviewForm></ReviewForm></PrivateRoute> ,
           loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
          
           
@@ -42,7 +43,7 @@ import Myreviews from './../components/Myreviews/Myreviews';
         },
         {
           path:'/myreview',
-          element:<Myreviews></Myreviews> ,
+          element:<PrivateRoute><Myreviews></Myreviews></PrivateRoute> ,
           loader:()=>fetch('http://localhost:5000/review')
         
         },
@@ -56,7 +57,7 @@ import Myreviews from './../components/Myreviews/Myreviews';
         
         {
           path: "/login",
-          element: <Login></Login> ,
+          element: <Login></Login>,
          
         },
         {

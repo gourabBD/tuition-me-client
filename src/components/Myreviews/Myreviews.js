@@ -6,13 +6,15 @@ import MyReviewCard from './MyRevieCard/MyReviewCard';
 
 const Myreviews = () => {
     const myreviews=useLoaderData()
-    console.log(myreviews)
+    
     const {user}=useContext(AuthContext)
     const {review,setReview}=useState()
+    
     return (
-        <div>
+        <div className='row row-cols-lg-3 row-cols-1 mt-5 mb-5 p-2 '>
+        
             {
-               myreviews.filter(review=>review?.email===user?.email).map(rev=><MyReviewCard key={rev._id} review={rev}></MyReviewCard>) 
+                myreviews?.filter(rev=>rev?.email === user?.email).length===0 ?<h1>you don't have any review yet.</h1> : myreviews?.filter(rev=>rev?.email === user?.email)?.map(review=> <MyReviewCard key={review._id} review={review}></MyReviewCard>)
                 
                
             }
