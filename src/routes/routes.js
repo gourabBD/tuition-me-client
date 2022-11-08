@@ -7,6 +7,7 @@ import Services from "../components/Services/Services";
 import Terms from "../components/Terms/Terms";
 import Main from "../layouts/Main";
 import ServiceDetails from './../components/ServiceDetails/ServiceDetails';
+import Myreviews from './../components/Myreviews/Myreviews';
 
 
   export const router = createBrowserRouter([
@@ -37,10 +38,13 @@ import ServiceDetails from './../components/ServiceDetails/ServiceDetails';
           path:'/services',
           element:<Services></Services>,
           loader:()=>fetch('http://localhost:5000/services')
-           
-          
-          
-
+        
+        },
+        {
+          path:'/myreview',
+          element:<Myreviews></Myreviews> ,
+          loader:()=>fetch('http://localhost:5000/review')
+        
         },
         {
           path:'/services/:id',
