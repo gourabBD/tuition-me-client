@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { toast } from 'react-hot-toast';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const MyReviewCard = ({review}) => {
  
@@ -46,7 +47,7 @@ const MyReviewCard = ({review}) => {
           <span className='fw-bold'>Review:</span> {review?.userReview}
         </Card.Text>
         <Button className='me-3 mt-2' onClick={()=>handleDeleteReview(review?._id)} variant="primary">Delete Review</Button>
-        <Button className='mt-2' variant="primary">Edit Review</Button>
+        <Link to={`/edit/${review?._id}`}><Button className='mt-2' variant="primary">Edit Review</Button></Link>
       </Card.Body>
     </Card>
     </CardGroup>

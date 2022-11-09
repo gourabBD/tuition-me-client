@@ -38,6 +38,7 @@ const Home = () => {
             <p>BSc. in CSE</p>
                 <h3 className='text-primary bg-warning '>Goal of the services</h3>
                 <p>The Goal of the the services are to make the students confident about their upcoming challenges.</p>
+                
                 <p> Spread the knowledge  to the students and teach them how to learn effectively and with practical explaination. </p>
                 <p>Getting involve the modern technology in teaching process and make learning much more fun and efficient.</p>
             </section>

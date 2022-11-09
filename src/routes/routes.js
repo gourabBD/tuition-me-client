@@ -12,6 +12,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Blogs from './../components/Blogs/Blogs';
 import SpinnerRouter from "./SpinnerRouter";
 import AddServices from "../components/AddServices/AddServices";
+import EditReview from "../components/EditReview/EditReview";
 
 
   export const router = createBrowserRouter([
@@ -54,6 +55,12 @@ import AddServices from "../components/AddServices/AddServices";
           path:'/myreview',
           element:<PrivateRoute><Myreviews></Myreviews></PrivateRoute> ,
           loader:()=>fetch('http://localhost:5000/review')
+        
+        },
+        {
+          path:'/edit/:id',
+          element:<PrivateRoute><EditReview></EditReview> </PrivateRoute> ,
+          loader:({params})=>fetch(`http://localhost:5000/review/${params.id}`)
         
         },
         {
