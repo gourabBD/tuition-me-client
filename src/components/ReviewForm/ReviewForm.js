@@ -1,33 +1,29 @@
-import React,{useContext,} from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-hot-toast';
-
+import React, { useContext } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const ReviewForm = () => {
-    const {user}=useContext(AuthContext)
-   const service=useLoaderData()
-  
+  const { user } = useContext(AuthContext);
+  const service = useLoaderData();
 
-    const handlePostReview=(event)=>{
-     event.preventDefault()
-     const form=event.target;
-     const userReview=form.userReview.value;
-     
-     const order = {
-      
-        email:user.email,
-        name: user.displayName,
-        userReview:userReview,
-        photoURL:user.photoURL,
-        serviceId:service._id,
-        subject:service.subject
+  const handlePostReview = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const userReview = form.userReview.value;
 
-      }
+    const order = {
+      email: user.email,
+      name: user.displayName,
+      userReview: userReview,
+      photoURL: user.photoURL,
+      serviceId: service._id,
+      subject: service.subject,
+    };
 
-      fetch("http://localhost:5000/review", {
+    fetch("https://tuition-me-server.vercel.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -39,31 +35,29 @@ const ReviewForm = () => {
         if (data.acknowledged) {
           toast.success("Review Placed Successfully!");
           form.reset();
-          
         }
       })
       .catch((err) => console.error(err));
+  };
 
-    }
-    
-    return (
-        <div className='d-flex justify-content-center mb-5 '>
-            
-             <Form onSubmit={handlePostReview} className='w-50'>
-      <Form.Group className="mb-3 d-grid" >
-        <Form.Label>Your Review</Form.Label>
-        <textarea name='userReview' type="text" placeholder="Write your review" />
-       
-      </Form.Group>
+  return (
+    <div className="d-flex justify-content-center mb-5 ">
+      <Form onSubmit={handlePostReview} className="w-50">
+        <Form.Group className="mb-3 d-grid">
+          <Form.Label>Your Review</Form.Label>
+          <textarea
+            name="userReview"
+            type="text"
+            placeholder="Write your review"
+          />
+        </Form.Group>
 
-      
-     
-      <Button onSubmit={handlePostReview} variant="primary" type="submit">
-        Submit
-      </Button>
+        <Button onSubmit={handlePostReview} variant="primary" type="submit">
+          Submit
+        </Button>
       </Form>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default ReviewForm;
