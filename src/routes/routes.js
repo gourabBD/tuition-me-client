@@ -10,6 +10,8 @@ import ServiceDetails from './../components/ServiceDetails/ServiceDetails';
 import Myreviews from './../components/Myreviews/Myreviews';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Blogs from './../components/Blogs/Blogs';
+import SpinnerRouter from "./SpinnerRouter";
+import AddServices from "../components/AddServices/AddServices";
 
 
   export const router = createBrowserRouter([
@@ -38,7 +40,13 @@ import Blogs from './../components/Blogs/Blogs';
         },
         {
           path:'/services',
-          element:<Services></Services>,
+          element:<SpinnerRouter><Services></Services></SpinnerRouter> ,
+          loader:()=>fetch('http://localhost:5000/services')
+        
+        },
+        {
+          path:'/addservice',
+          element:<PrivateRoute><AddServices></AddServices> </PrivateRoute>,
           loader:()=>fetch('http://localhost:5000/services')
         
         },
@@ -58,12 +66,12 @@ import Blogs from './../components/Blogs/Blogs';
         
         {
           path: "/login",
-          element: <Login></Login>,
+          element: <SpinnerRouter><Login></Login></SpinnerRouter> ,
          
         },
         {
           path: "/register",
-          element: <Register></Register> ,
+          element: <SpinnerRouter><Register></Register></SpinnerRouter> ,
          
         },
         {
