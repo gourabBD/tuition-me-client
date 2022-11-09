@@ -17,6 +17,7 @@ const HomeCourses = () => {
             {
                 services?.map(service=><HomeCard key={service?._id} service={service}></HomeCard>)
             }
+            
         </div>
     );
 };
