@@ -71,14 +71,14 @@ const Login = () => {
       <div className="d-flex justify-content-center">
 
         <Form  onSubmit={handleLogin} className="m-4 w-50">
-        <h3>Login</h3>
+        <h3 className="text-primary">Login</h3>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label className="text-primary">Email address</Form.Label>
         <Form.Control name="email" type="email" placeholder="Enter email" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
+        <Form.Label className="text-primary">Password</Form.Label>
         <Form.Control name="password" type="password" placeholder="Password" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox"></Form.Group>
@@ -93,7 +93,7 @@ const Login = () => {
       <Button onClick={handleGoogleSignIn}  className='m-2 ' variant="outline-primary"><BsGoogle></BsGoogle> LogIn with Google</Button>
       
       
-      <p>Do not have an account? <Link to={'/register'}>Register now?</Link></p>
+      <p className="text-light">Do not have an account? <Link to={'/register'}>Register now?</Link></p>
     </Form>
       </div>
     );

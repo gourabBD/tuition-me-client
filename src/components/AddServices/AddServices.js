@@ -42,7 +42,10 @@ const AddServices = () => {
   };
 
   return (
+    <div>
+       <h2 className="text-primary text-decoration-underline">Add Service</h2>
     <div className="d-flex justify-content-center mb-5 ">
+    
       <Form onSubmit={handlePostService} className="w-50">
         <Form.Group className="mb-3 d-grid">
           <input
@@ -93,6 +96,7 @@ const AddServices = () => {
           Submit
         </Button>
       </Form>
+    </div>
     </div>
   );
 };

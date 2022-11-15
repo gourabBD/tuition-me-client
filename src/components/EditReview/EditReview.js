@@ -1,17 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useLoaderData } from "react-router-dom";
+import toast from "react-hot-toast";
+import { useLoaderData,useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider/AuthProvider";
+
 const EditReview = () => {
   const [orders, setOrders] = useState([]);
   const { user, logOut } = useContext(AuthContext);
   const reviews = useLoaderData();
+  const navigate = useNavigate();
+    const location=useLocation()
+    const from=location.state?.from?.pathname ||'/myreview'
 
   useEffect(() => {
     fetch(`https://tuition-me-server.vercel.app/review/${reviews?._id}`)
       .then((res) => {
-        console.log(res);
+       
         if (res.status === 401 || res.status === 403) {
           return logOut();
         }
@@ -41,16 +46,24 @@ const EditReview = () => {
           approving.userReview = userReview;
           const newOrders = [...remaining, approving];
           setOrders(newOrders);
+          
         }
+        
       });
+     
     form.reset();
+    toast.success("Review updated")
+    navigate(from, { replace: true });
+    
+    
+   
   };
 
   return (
-    <div className="d-flex justify-content-center mb-5 ">
+    <div className="d-flex justify-content-center mb-5 align-items-center " style={{ minHeight: '500px' }}>
       <Form onSubmit={handleEditReview} className="w-50">
         <Form.Group className="mb-3 d-grid">
-          <Form.Label>Eidt Review</Form.Label>
+          <Form.Label className="fw-bold text-primary">Eidt Review</Form.Label>
           <textarea
             name="userReview"
             type="text"

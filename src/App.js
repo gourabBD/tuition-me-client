@@ -8,7 +8,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App background-all ">
       <RouterProvider router={router}></RouterProvider>
       <Toaster />
     </div>

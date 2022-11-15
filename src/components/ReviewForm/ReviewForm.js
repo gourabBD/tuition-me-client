@@ -41,10 +41,10 @@ const ReviewForm = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center mb-5 ">
+    <div style={{ minHeight: '500px' }} className="d-flex justify-content-center align-items-center mb-5 ">
       <Form onSubmit={handlePostReview} className="w-50">
         <Form.Group className="mb-3 d-grid">
-          <Form.Label>Your Review</Form.Label>
+          <Form.Label className='text-primary fw-bold'>Your Review</Form.Label>
           <textarea
             name="userReview"
             type="text"

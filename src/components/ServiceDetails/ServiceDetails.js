@@ -38,7 +38,7 @@ const ServiceDetails = () => {
               </Card>
             </div>
           </Col>
-          <Col lg={5}>
+          <Col className="nav-color" lg={5}>
             <div>
               {user ? (
                 <Link to={`/myreviews/${_id}`}>
@@ -51,7 +51,7 @@ const ServiceDetails = () => {
               )}
             </div>
             <div>
-              <h5>Total reviews: {reviews?.length}</h5>
+              <h5 className='text-primary'>Total reviews: {reviews?.length}</h5>
             </div>
             <div className="row row-cols-1 d-flex justify-content-center">
               {reviews?.map((review) => (

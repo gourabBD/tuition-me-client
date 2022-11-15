@@ -56,7 +56,7 @@ const Register = () => {
     <Form className="m-4 w-50" onSubmit={handleSubmit}>
     <h1 className="text-primary">Register</h1>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Full Name</Form.Label>
+        <Form.Label className="text-primary">Full Name</Form.Label>
         <Form.Control
           name="name"
           type="text"
@@ -66,7 +66,7 @@ const Register = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Photo URL</Form.Label>
+        <Form.Label className="text-primary">Photo URL</Form.Label>
         <Form.Control
           name="photo"
           type="text"
@@ -76,7 +76,7 @@ const Register = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label className="text-primary">Email address</Form.Label>
         <Form.Control
           name="email"
           type="email"
@@ -86,7 +86,7 @@ const Register = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
+        <Form.Label className="text-primary">Password</Form.Label>
         <Form.Control
           name="password"
           type="password"
@@ -100,9 +100,9 @@ const Register = () => {
           type="checkbox"
           onClick={handleAccepted}
           label={
-            <>
-              Accept <Link to={"/terms"}>Terms & conditions</Link>
-            </>
+            <p className="text-light">
+              Accept <span> <Link to={"/terms"}>Terms & conditions</Link></span>
+            </p>
           }
         />
       </Form.Group>
@@ -110,7 +110,7 @@ const Register = () => {
       <Button variant="primary" type="submit" disabled={!accepted}>
         Register
       </Button>
-      <p>Already have an account? <Link to={'/login'}>Log in now?</Link></p>
+      <p className="text-light">Already have an account? <Link to={'/login'}>Log in now?</Link></p>
       <div>
         <Form.Text className="text-danger">{error}</Form.Text>
       </div>
