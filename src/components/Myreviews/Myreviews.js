@@ -16,10 +16,10 @@ const Myreviews = () => {
    
     
     return (
-        <div className='row row-cols-lg-3 row-cols-1 m-auto mt-2 mb-5 p-2 d-lg-flex justify-content-center d-grid  w-100'>
+        <div className='row row-cols-lg-3 row-cols-1 m-auto mt-2  p-2 d-lg-flex justify-content-center d-grid min-vh-100 bg-white  w-100'>
         
             {
-                myreviews?.filter(rev=>rev?.email === user?.email).length===0 ? <div style={{ minHeight: '500px' }} ><h3 className='text-primary' >No reviews were added.</h3></div> : myreviews?.filter(rev=>rev?.email === user?.email)?.map(review=> <MyReviewCard  key={review._id} review={review}> </MyReviewCard>)
+                myreviews?.filter(rev=>rev?.email === user?.email).length===0 ? <div  ><h3 className='text-primary' >No reviews were added.</h3></div> : myreviews?.filter(rev=>rev?.email === user?.email)?.map(review=> <MyReviewCard  key={review._id} review={review}> </MyReviewCard>)
                 
                
             }

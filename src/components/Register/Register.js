@@ -51,7 +51,7 @@ const Register = () => {
     setAccepted(event.target.checked);
   };
   return (
-    <div className="d-flex justify-content-center ">
+    <div className="d-flex justify-content-center bg-white text-start">
     
     <Form className="m-4 w-50" onSubmit={handleSubmit}>
     <h1 className="text-primary">Register</h1>
@@ -100,8 +100,8 @@ const Register = () => {
           type="checkbox"
           onClick={handleAccepted}
           label={
-            <p className="text-light">
-              Accept <span> <Link to={"/terms"}>Terms & conditions</Link></span>
+            <p className="text-primary">
+              Accept the <span> <Link to={"/terms"}>Terms & conditions?</Link></span>
             </p>
           }
         />
@@ -110,7 +110,7 @@ const Register = () => {
       <Button variant="primary" type="submit" disabled={!accepted}>
         Register
       </Button>
-      <p className="text-light">Already have an account? <Link to={'/login'}>Log in now?</Link></p>
+      <p className="text-primary">Already have an account? <Link to={'/login'}>Log in now?</Link></p>
       <div>
         <Form.Text className="text-danger">{error}</Form.Text>
       </div>

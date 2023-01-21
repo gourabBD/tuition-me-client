@@ -2,7 +2,7 @@ import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 const Blogs = () => {
     return (
-        <div  className='p-5'>
+        <div  className='p-5 bg-white min-vh-100'>
 
         <Accordion className='m-3'>
       <Accordion.Item eventKey="0">

@@ -42,7 +42,7 @@ const AddServices = () => {
   };
 
   return (
-    <div>
+    <div className="min-vh-100 bg-white">
        <h2 className="text-primary text-decoration-underline">Add Service</h2>
     <div className="d-flex justify-content-center mb-5 ">
     

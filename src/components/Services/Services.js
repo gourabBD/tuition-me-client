@@ -6,7 +6,7 @@ const Services = () => {
 
     const services=useLoaderData()
     return (
-        <div>
+        <div className='bg-white'>
             <div>
                 <h2 className='text-primary'>All the services</h2>
             </div>

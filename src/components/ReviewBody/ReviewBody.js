@@ -4,11 +4,12 @@ import Image from 'react-bootstrap/Image'
 import './reviewbody.css'
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { TypeAnimation } from 'react-type-animation';
 
 const ReviewBody = ({review}) => {
     const {_id,email,name,userReview,photoURL,serviceId,subject}=review
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card data-aos="fade-right" style={{ width: '18rem' }}>
         <Card.Body>
          <div>
          <PhotoProvider>
@@ -22,7 +23,11 @@ const ReviewBody = ({review}) => {
           <p>Subject: {subject}</p>
           <Card.Text>
           
-          <span className='fw-bold'>Review:</span> {userReview}
+          <span className='fw-bold'>Review:</span> <TypeAnimation
+                  sequence={[` ${userReview}`, 
+                  3000, ""]}
+                  repeat={Infinity}
+                />
           </Card.Text>
           
           

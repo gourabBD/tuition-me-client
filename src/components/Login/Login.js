@@ -68,7 +68,7 @@ const Login = () => {
 
       
     return (
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center text-start bg-white">
 
         <Form  onSubmit={handleLogin} className="m-4 w-50">
         <h3 className="text-primary">Login</h3>
@@ -90,10 +90,10 @@ const Login = () => {
 
       <Form.Text className="text-danger"> {error}</Form.Text>
       </div>
-      <Button onClick={handleGoogleSignIn}  className='m-2 ' variant="outline-primary"><BsGoogle></BsGoogle> LogIn with Google</Button>
+      <Button onClick={handleGoogleSignIn}  className='mt-2 mb-2 ' variant="outline-primary"><BsGoogle></BsGoogle> LogIn with Google</Button>
       
       
-      <p className="text-light">Do not have an account? <Link to={'/register'}>Register now?</Link></p>
+      <p className="text-primary text-start">Do not have an account? <Link to={'/register'}>Register now?</Link></p>
     </Form>
       </div>
     );

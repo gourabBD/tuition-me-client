@@ -60,7 +60,7 @@ const EditReview = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center mb-5 align-items-center " style={{ minHeight: '500px' }}>
+    <div className="d-flex justify-content-center min-vh-100 align-items-center bg-white" >
       <Form onSubmit={handleEditReview} className="w-50">
         <Form.Group className="mb-3 d-grid">
           <Form.Label className="fw-bold text-primary">Eidt Review</Form.Label>

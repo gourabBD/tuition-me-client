@@ -11,7 +11,8 @@ const HomeCourses = () => {
   }, []);
 
   return (
-    <div className="row row-cols-lg-3 row-cols-1 w-auto">
+    <div className="row row-cols-lg-3 row-cols-1  ">
+    
       {services?.map((service) => (
         <HomeCard key={service?._id} service={service}></HomeCard>
       ))}

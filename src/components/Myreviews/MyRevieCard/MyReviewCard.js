@@ -41,8 +41,8 @@ const MyReviewCard = ({ review }) => {
     }
   };
   return (
-    <CardGroup className="d-flex justify-content-center ">
-      <Card className="p-2 " >
+    <CardGroup  className="d-flex justify-content-center align-items-center">
+      <Card  className="p-2 h-75" >
         <Card.Img
           style={{ height: "150px" }}
           variant="top"

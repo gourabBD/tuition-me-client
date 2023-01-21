@@ -21,11 +21,11 @@ const NavBar = () => {
     .catch((error) => console.error(error));
   }
     return (
-        <Navbar className='p-4 ' collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
+        <Navbar className='p-4 border shadow' collapseOnSelect expand="lg" bg="white" variant="warning">
+      
       <Image style={{height:"50px"}} src={img}></Image>
       
-        <Navbar.Brand ><Link className='fw-bold text-decoration-none text-info' to={'/'}> Tuition Me</Link></Navbar.Brand>
+        <Navbar.Brand ><Link className='fw-bold text-decoration-none ' to={'/'}> Tuition Me</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" >
         <div className='me-auto d-lg-flex align-items-center p-2  d-grid  '>
@@ -96,7 +96,7 @@ const NavBar = () => {
             
           </Nav>
         </Navbar.Collapse>
-      </Container>
+     
     </Navbar>
     );
 };

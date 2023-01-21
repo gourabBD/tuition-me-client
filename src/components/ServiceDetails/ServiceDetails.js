@@ -7,6 +7,7 @@ import { AuthContext } from "../../context/AuthProvider/AuthProvider";
 import Button from "react-bootstrap/Button";
 import ReviewBody from "../ReviewBody/ReviewBody";
 
+
 const ServiceDetails = () => {
   const { user } = useContext(AuthContext);
   const detail = useLoaderData();
@@ -19,10 +20,10 @@ const ServiceDetails = () => {
   }, []);
 
   return (
-    <div>
-      <Container>
-        <Row>
-          <Col lg={7} className="d-block d-lg-flex">
+    <div className="bg-white w-100">
+    
+        <Row className="">
+          <Col lg={8} className="d-block d-lg-flex ">
             <div className="p-5">
               <Card style={{ width: "auto" }}>
                 <Card.Img style={{ height: "500px" }} variant="top" src={img} />
@@ -38,7 +39,7 @@ const ServiceDetails = () => {
               </Card>
             </div>
           </Col>
-          <Col className="nav-color" lg={5}>
+          <Col className="bg-warning " lg={4}>
             <div>
               {user ? (
                 <Link to={`/myreviews/${_id}`}>
@@ -51,16 +52,18 @@ const ServiceDetails = () => {
               )}
             </div>
             <div>
-              <h5 className='text-primary'>Total reviews: {reviews?.length}</h5>
+              <h5 className="text-primary">
+              Total reviews: {reviews?.length}
+              </h5>
             </div>
-            <div className="row row-cols-1 d-flex justify-content-center">
+            <div className="row row-cols-1 mb-2 gap-2 d-flex justify-content-center">
               {reviews?.map((review) => (
                 <ReviewBody key={review?._id} review={review}></ReviewBody>
               ))}
             </div>
           </Col>
         </Row>
-      </Container>
+      
     </div>
   );
 };

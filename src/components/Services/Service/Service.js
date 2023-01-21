@@ -6,13 +6,14 @@ import { Link,
   } from "react-router-dom";
   import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { TypeAnimation } from 'react-type-animation';
 
 const Service = ({service}) => {
     const {_id,subject,img,cost,description,days}=service;
     return (
         <div>
              <CardGroup>
-      <Card style={{height:"30rem"}} className='mb-2 p-2'>
+      <Card data-aos="flip-left" style={{height:"30rem"}} className='mb-2 p-2'>
       <PhotoProvider>
         <PhotoView src={img}>
         <Card.Img style={{height:'250px'}} variant="top" src={img} />
@@ -25,9 +26,9 @@ const Service = ({service}) => {
             {description.length>100 ? description.slice(0,100) + ' ...' :description}
 
           </Card.Text>
-          <Link to={`/services/${service?._id}`}><Button variant="primary">Show details</Button></Link>
+         
         </Card.Body>
-        
+        <Link  to={`/services/${service?._id}`}><Button  variant="primary">Show details</Button></Link>
       </Card>
       
       

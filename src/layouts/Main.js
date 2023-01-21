@@ -5,10 +5,11 @@ import NavBar from '../components/NavBar/NavBar';
 
 const Main = () => {
     return (
-        <div>
+        <div className='min-vh-100 overflow-hidden'>
         <NavBar></NavBar>
             <Outlet></Outlet>
             <Footers></Footers>
+         
         </div>
     );
 };
