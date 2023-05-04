@@ -1,5 +1,5 @@
 
-features or used things of my project:
+features:
 
  1.Used react-router-dom
  2.Firebase authentication
