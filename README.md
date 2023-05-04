@@ -1,11 +1,13 @@
 
 features:
 
- 1.Used react-router-dom
- 2.Firebase authentication
- 3.MongoDB CRUD operation
- 4.Vercel to make live data
- 5.Used environment variables
+# Users can give feedback or review of the services
+# Users can see their individual feedbacks
+# Users Can delete and edit their feedbacks
+# Firebase authentication
+# MongoDB CRUD operation
+# Vercel to make live data
+ 
  
 Client
 
