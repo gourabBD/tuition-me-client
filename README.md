@@ -6,7 +6,7 @@ features:
 # Users Can delete and edit their feedbacks
 # Firebase authentication
 # MongoDB CRUD operation
-# Vercel to make live data
+# RESTful API
  
  
 Client
