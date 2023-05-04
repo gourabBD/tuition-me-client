@@ -28,7 +28,7 @@ Environmental variables
 
 
 live site link: https://tuition-me.web.app
-Server link: https://github.com/gourabBD/tuition-me-server
+Server Github link: https://github.com/gourabBD/tuition-me-server
 
 Screen shots:
 
